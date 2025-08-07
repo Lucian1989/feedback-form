@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Formular Feedback + Autentificare</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Autentificare</h1>
+  <form id="login-form">
+    <label for="username">Username:</label>
+    <input type="text" id="username" required>
+
+    <label for="password">Parolă:</label>
+    <input type="password" id="password" required>
+
+    <button type="button" onclick="handleLogin()">Autentificare</button>
+    <p id="login-error" style="color:red;"></p>
+  </form>
+
+  <hr>
+
+  <h1>Trimite feedback</h1>
+  <form id="feedback-form">
+    <label for="name">Nume:</label>
+    <input type="text" id="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" required>
+
+    <label for="phone">Telefon:</label>
+    <input type="tel" id="phone" pattern="[0-9+ ]{10,15}">
+
+    <label for="subject">Subiect:</label>
+    <select id="subject" required>
+      <option value="">-- Selectează --</option>
+      <option value="general">Feedback general</option>
+      <option value="bug">Raportare eroare</option>
+      <option value="feature">Sugestie funcționalitate</option>
+    </select>
+
+    <label for="rating">Rating (1-5):</label>
+    <input type="number" id="rating" min="1" max="5" required>
+
+    <label for="comments">Comentarii:</label>
+    <textarea id="comments" required></textarea>
+
+    <label>
+      <input type="checkbox" id="terms" required>
+      Accept termenii și condițiile
+    </label>
+
+    <label>
+      <input type="checkbox" id="contact">
+      Doresc să fiu contactat
+    </label>
+
+    <button type="submit">Trimite</button>
+  </form>
+
+  <h2>Feedback-uri primite:</h2>
+  <ul id="feedback-list"></ul>
+
+  <script src="script.js"></script>
+</body>
+</html>
